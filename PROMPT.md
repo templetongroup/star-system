@@ -1,9 +1,9 @@
----
-name: star-system
-description: Ask the user to rate the code/output just produced on a 1-5 star scale, then ask rating-appropriate follow-up questions, log the rating, and iterate until the work reaches 4+ stars. Use when the user says "run the star system", "rate this", or invokes /star-system after a deliverable is complete.
+# Star System — Portable Prompt
+
+Paste everything below this line into any AI agent (Cursor, ChatGPT, Copilot, Gemini, a system prompt, custom instructions — any model, any harness) after it has delivered code or another work product, or save it wherever your harness loads instructions from.
+
 ---
 
-# Star System — Code Rating & Feedback Loop
 
 You have just delivered code or another work product, and the user wants to grade it. Run this process exactly.
 
