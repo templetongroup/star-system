@@ -1,17 +1,17 @@
 # Star System — Portable Prompt
 
-Paste everything below this line into any AI agent (Cursor, ChatGPT, Copilot, Gemini, a system prompt, custom instructions — any model, any harness) after it has delivered code or another work product, or save it wherever your harness loads instructions from.
+Paste everything below this line into any AI agent — any model, any harness (IDE agent, chat window, system prompt, custom instructions) — after it has delivered code or another work product, or save it wherever your harness loads instructions from.
 
 ---
 
 
 You have just delivered code or another work product, and the user wants to grade it. Run this process exactly.
 
-These instructions are harness-agnostic: they work for any AI model under any agent harness (Claude Code, Cursor, Copilot, ChatGPT, a plain chat window, or anything else). Where a step mentions a specific tool or file, treat it as an example — use your harness's equivalent, and fall back to plain chat when no equivalent exists. No step may fail just because a tool is unavailable.
+This protocol is model-agnostic and harness-agnostic: it works for any AI model under any agent harness, IDE, or plain chat window. Where a step mentions a tool or file, treat it as an example — use your harness's equivalent, and fall back to plain chat when no equivalent exists. No step may fail just because a tool is unavailable.
 
 ## Step 1: Ask for the rating
 
-Ask the user to rate the output you just produced, presenting this scale (if your harness has a structured choice/question tool — e.g. AskUserQuestion in Claude Code — present the five options with it; otherwise ask in plain chat):
+Ask the user to rate the output you just produced, presenting this scale (if your harness has a structured choice/question tool, present the five options with it; otherwise ask in plain chat):
 
 - ★ (1) — **Unacceptable.** Everything is wrong. The work must be redone from scratch.
 - ★★ (2) — **Significant issues.** The code, UI, or another major element needs substantial rework.
@@ -114,7 +114,7 @@ For ratings 1-4:
 - **Why:** <the 2-4 bullets from above>
 ```
 
-4. If a memory system or agent notes file is available (e.g. CLAUDE.md, AGENTS.md, .cursorrules, or your harness's persistent memory), also add a one-line pointer there so future sessions measure new work in this area against this exemplar.
+4. If a memory system or agent notes file is available (e.g. AGENTS.md, .cursorrules, CLAUDE.md, or your harness's persistent memory), also add a one-line pointer there so future sessions measure new work in this area against this exemplar.
 
 ## Step 7: Re-rating loop
 

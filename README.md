@@ -1,8 +1,8 @@
 # Star System
 
-A rating-and-feedback protocol for AI-generated code. **Any model, any harness** — ships as a [Claude Code skill](https://docs.claude.com/en/docs/claude-code/skills), but the instructions are plain markdown that work in Cursor, ChatGPT, Copilot, Gemini, or anything else that follows a prompt.
+A rating-and-feedback protocol for AI-generated code. **Model-agnostic and harness-agnostic** — the protocol is plain markdown instructions that work with any AI model, in any agent harness, IDE, or chat window.
 
-After an AI agent delivers code, invoke the skill. The agent asks you for a 1–5 star rating, asks follow-up questions scaled to the score — a full diagnostic at 1 star, down to zero questions at 5 — turns your answers into a confirmed action plan, executes it, and asks you to **re-rate until the work reaches 4+ stars**.
+After an AI agent delivers code, invoke the protocol. The agent asks you for a 1–5 star rating, asks follow-up questions scaled to the score — a full diagnostic at 1 star, down to zero questions at 5 — turns your answers into a confirmed action plan, executes it, and asks you to **re-rate until the work reaches 4+ stars**.
 
 ## The scale
 
@@ -40,16 +40,16 @@ After an AI agent delivers code, invoke the skill. The agent asks you for a 1–
 
 ## Install
 
-**Claude Code:** copy this repo to `~/.claude/skills/star-system/` (personal) or `.claude/skills/star-system/` (per-project), then invoke with `/star-system`.
+**Any agent:** paste the contents of [`PROMPT.md`](PROMPT.md) into your agent after it delivers work, or save it wherever your harness loads instructions from (custom instructions, system prompt, skills directory, `.cursorrules`, `AGENTS.md`, …).
+
+**Harnesses with a skills directory:** clone this repo into it, e.g.:
 
 ```bash
 git clone https://github.com/templetongroup/star-system ~/.claude/skills/star-system
 ```
 
-**Everything else:** paste the contents of [`PROMPT.md`](PROMPT.md) into your agent after it delivers work, or save it wherever your harness loads instructions from (custom instructions, system prompt, `.cursorrules`, `AGENTS.md`, …).
-
 ## Files
 
-- [`SKILL.md`](SKILL.md) — the skill (Claude Code format; body is harness-agnostic)
+- [`SKILL.md`](SKILL.md) — the protocol in skill format (YAML frontmatter + instructions; body is harness-agnostic)
 - [`PROMPT.md`](PROMPT.md) — the same protocol as a paste-anywhere prompt
 - [`LICENSE`](LICENSE) — MIT
